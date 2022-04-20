@@ -1,21 +1,23 @@
 <template>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; position: relative">
+  <div class="searchBlock">
     <div style="display: flex; justify-content: space-between; align-items: center">
       <img src="@/assets/images/Vector.svg" />
       <div style="color: white">{{this.$store.state.city}}, {{this.$store.state.county}}</div>
     </div>
-    <div class="container">
-      <input type="text" placeholder="Search.." v-model="city">
-      <button class="search"></button>
-    </div>
-    <div class="searchCity" v-if="city.length > 0">
-      <div
-          v-for="item in arrayCitySearch"
-          :key="item.id"
-          class="searchCityItem"
-          @click="ChoiceCity(item)"
-      >
-        {{item.english}}, {{item.country}}
+    <div class="searchButtonBlock">
+      <div class="container">
+        <input type="text" placeholder="Search.." v-model="city">
+        <button class="search"></button>
+      </div>
+      <div class="searchCity" v-if="city.length > 0">
+        <div
+            v-for="item in arrayCitySearch"
+            :key="item.id"
+            class="searchCityItem"
+            @click="ChoiceCity(item)"
+        >
+          {{item.english}}, {{item.country}}
+        </div>
       </div>
     </div>
   </div>
@@ -63,26 +65,18 @@ export default {
 
 <style scoped>
 
-/*.search{
-  background: rgba(255, 255, 255, .2);
-  border: none;
-  padding: 15px 15px;
-  border-radius: 20px;
-  cursor: pointer;
+.searchBlock{
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  transition: .5s;
+  margin-top: 20px;
 }
 
-.search:hover{
-  background: rgba(0, 0, 0, .2);
-  border: none;
-  padding: 15px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}*/
+.searchButtonBlock{
+  position: relative;
+  margin-right: 15%;
+  width: 70%;
+}
 
 .container {
   position: absolute;
@@ -90,7 +84,7 @@ export default {
   left: 40%;
   right: 0;
   bottom: 0;
-  width: 70%;
+  width: 100%;
 }
 
 .container .search {
@@ -109,7 +103,7 @@ export default {
   /* box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4); */
 }
 
-.container .search:hover {
+.search:hover {
   cursor: pointer;
 }
 

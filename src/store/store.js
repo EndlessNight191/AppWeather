@@ -67,7 +67,7 @@ export default createStore({
                     console.error(error);
                 })
 
-            axios.request(`https://api.weatherbit.io/v2.0/forecast/daily?city=Makeevka&country=UA&key=203a9d3ce16a4061bdbd38c9b252e05f&include=minutely&units=I`)
+            axios.request(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&country=${country}&key=203a9d3ce16a4061bdbd38c9b252e05f&include=minutely&units=I`)
                 .then(function (response){
                     console.log(response.data);
                     commit('SetLoadingFarengait', response.data.data);

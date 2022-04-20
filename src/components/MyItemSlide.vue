@@ -30,11 +30,6 @@ export default {
 
 <style scoped>
 
-.mainItemSlide{
-  margin: 0px 15% 0px 0px;
-  position: relative;
-}
-
 .itemSlide{
   width: 150%;
   background-color: rgba(255, 255, 255, 0.3);

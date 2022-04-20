@@ -1,6 +1,6 @@
 <template>
   <div class="mainIndexses">
-    <div style="display: flex; align-items: center; flex-direction: column; width: 50%; position: relative">
+    <div style="display: flex; align-items: center; flex-direction: column; width: 50%; position: relative; justify-content: flex-end">
       <strong class="IndexsesDayTextHeader">Visibility range</strong>
       <div class="radius">
         <div class="hour" :style="{transform: `rotate(${percentVisibility + (-50)}deg)`}">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div style="display: flex; align-items: center; flex-direction: column; width: 50%; position: relative">
+    <div style="display: flex; align-items: center; flex-direction: column; width: 50%; position: relative; justify-content: flex-end">
       <strong class="IndexsesDayTextHeader">UV index</strong>
       <div class="radius">
         <div class="hour" :style="{transform: `rotate(${percentIndexes + (-90)}deg)`}">
@@ -83,5 +83,22 @@ export default {
   border-width: 6px;
   border-style: solid;
   border-color: transparent;*/
+}
+
+@media (max-width: 560px) {
+  .radius{
+    width: 8rem;
+    height: 4rem;
+  }
+
+  .hour
+  {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    height: 4.6em;
+    z-index: 1000;
+    transform-origin: bottom;
+  }
 }
 </style>
