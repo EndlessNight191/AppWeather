@@ -44,7 +44,7 @@ export default {
   },
   watch:{
      city(oldValue, newValue){
-       axios.request(`http://htmlweb.ru/geo/api.php?json&city_name=${newValue}&api_key=56c2442597a5dfc8a2e1334215a75a48`)
+       axios.request(`https://htmlweb.ru/geo/api.php?json&city_name=${newValue}&api_key=56c2442597a5dfc8a2e1334215a75a48`)
           .then((response) => {
             this.arrayCitySearch = response.data
             delete this.arrayCitySearch.limit;
